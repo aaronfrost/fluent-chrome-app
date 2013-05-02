@@ -1,0 +1,32 @@
+.grow, .shrink{
+	-webkit-transition: all 1s ease-in;
+       -moz-transition: all 1s ease-in;
+            transition: all 1s ease-in;
+
+}
+.shrink{
+	height:0px;
+	color: white;
+}
+.grow{
+	height: auto;
+	color: black;
+}
+
+.tweet-list{
+	margin-top:20px
+	width:50%;
+}
+.tweet-list li{
+	list-style-type: none;
+}
+
+.media{
+	margin-bottom: 7px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid lightgray;
+}
+.btn-group{
+	margin-bottom: 20px;
+}

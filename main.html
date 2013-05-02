@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-csp>
+	<head >
+		<title>1.21 Gigawatts App</title>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
+		<script type="text/javascript" src="angular.js"></script>
+		<script type="text/javascript" src="angular-resource.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="TweetController.js"></script>
+		<script type="text/javascript" src="Tweets.js"></script>
+
+		<link rel="stylesheet" href="css/bootstrap.css"/>
+		<link rel="stylesheet" href="css/bootstrap-responsive.css"/>
+		<link rel="stylesheet" href="app.css"/>
+		
+	</head>
+	<body>
+		<h1>Count Your Tweets</h1>
+		<div class="tweets" ng-controller="TweetController">
+
+			<div class="btn-group">
+				<button class="btn btn-info">Like Count: {{likeCount}}</button>
+				<button class="btn btn-success">So Count: {{soCount}}</button>
+				<button class="btn btn-warning">Um Count: {{umCount}}</button>
+				<button class="btn btn-info">Uh Count: {{uhCount}}</button>
+			</div>
+			<div class="{{tweet.height}}" ng-repeat="tweet in tweets | orderBy:'id':true">
+
+				<div class="media">
+				  <a class="pull-left" href="#">
+				    <img class="media-object" src="{{tweet.profile_image_url}}">
+				  </a>
+				  <div class="media-body">
+				    <h4 class="media-heading">{{tweet.from_user_name}} <small>@{{tweet.from_user}}</small></h4>
+				    {{tweet.text}}
+				    <h6>{{tweet.created_at | date:'short'}}</h6>
+				  </div>
+				</div>
+
+				
+			</div>
+			
+		</div>	
+	</body>
+</html>
