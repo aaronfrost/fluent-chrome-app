@@ -17,14 +17,14 @@ angular.module('app').controller('TweetController', function($scope, Tweets){
 	$scope.tweetInterval = setInterval(function(){
 		console.log('Here I Am');
 		var options = {
-			"q":"#openwestconf #gigawatts" 
+			"q":"#fluentconf #gigawatts" 
 		};
 		var sinceId = localStorage.getItem('max_id') || 0;
 		console.log(sinceId);
 		if(sinceId) options['since_id'] = sinceId;
 
 		var result = Tweets.get(options, function(){
-			console.log('result',result);
+			
 			result.results.forEach(function(tweet){
 				if(/(\b)(like|so|um|uh)(\b)/g.exec(tweet.text)){
 					if(/(\b)(like)(\b)/g.exec(tweet.text)){

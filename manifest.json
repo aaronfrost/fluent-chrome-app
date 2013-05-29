@@ -1,22 +1,21 @@
-// Required
 {
   "name": "1.21 Gigawatts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "manifest_version": 2,
-  "description": "Demo App for Fluent Conf",
+  "description": "GigaWatts App used at Fluent Conf",
   "app":{
     "launch": {
       "local_path" : "main.html",
       "container":"panel",
       "height": 600,
-      "width": 500
+      "width": 415
     }
   },
   "permissions":[
   	"background",
     "http://search.twitter.com/*"
   ],
-  "icons":{"128": "logo.png"},
+  "icons":{"128": "flux.png"},
   "web_accessible_resources": [
     "screamingsheep.mp3" ]
 }
