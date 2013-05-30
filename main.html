@@ -2,15 +2,16 @@
 <html ng-app="app" ng-csp>
 	<head >
 		<title>1.21 Gigawatts App</title>
+		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="sockjs0.3.js"></script>
-		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
 		<script type="text/javascript" src="angular.js"></script>
 		<script type="text/javascript" src="angular-resource.js"></script>
 		<script type="text/javascript" src="app.js"></script>
 		<script type="text/javascript" src="SocketController.js"></script>
 		<script type="text/javascript" src="TweetController.js"></script>
 		<script type="text/javascript" src="Tweets.js"></script>
+		<script type="text/javascript" src="troller.js"></script>
 
 		<link rel="stylesheet" href="css/bootstrap.css"/>
 		<link rel="stylesheet" href="css/bootstrap-responsive.css"/>
@@ -18,6 +19,12 @@
 		
 	</head>
 	<body>
+		
+		<h1>Angular Speech Recognition Trolls</h1>
+		<troller highlight="um|so|like|uh"></troller>
+
+		<br/>
+		<br/>
 		<div ng-controller="SocketCtrl">
 			<h1>Node Trolls</h1>
 			

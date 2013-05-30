@@ -1,5 +1,4 @@
 angular.module('app').controller('TweetController', function($scope, Tweets){
-	console.log('setting up crap');
 	$scope.tweets = [];
 	$scope.likeCount = 0,
 	$scope.umCount = 0, 
@@ -15,12 +14,12 @@ angular.module('app').controller('TweetController', function($scope, Tweets){
 
 	localStorage.removeItem('max_id');
 	$scope.tweetInterval = setInterval(function(){
-		console.log('Here I Am');
+		// console.log('Here I Am');
 		var options = {
 			"q":"#fluentconf #gigawatts" 
 		};
 		var sinceId = localStorage.getItem('max_id') || 0;
-		console.log(sinceId);
+		// console.log(sinceId);
 		if(sinceId) {
 			options['since_id'] = sinceId;
 		}

@@ -2,11 +2,11 @@ angular.module('app').controller('SocketCtrl', function($scope){
 	
 	sock = new SockJS('http://troller.hp.af.cm/echo');
 	sock.onopen = function() {
-	   console.log('open');
+	   // console.log('open');
 	   sock.send(JSON.stringify({type:'master'}));
 	};
 	sock.onmessage = function(e) {
-		console.log(e);
+		// console.log(e);
 		var m = JSON.parse(e.data);
 		var votes = m.data;
 		switch(m.type) {
@@ -20,12 +20,12 @@ angular.module('app').controller('SocketCtrl', function($scope){
 				$scope.votingOn = m.votingOn;
 				break;
 			default :
-				console.log('unknown message', e);
+				// console.log('unknown message', e);
 				break;
 	   	}
 	};
 	sock.onclose = function() {
-	   console.log('close');
+	   // console.log('close');
 	};
 
 

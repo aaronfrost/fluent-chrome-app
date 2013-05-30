@@ -14,7 +14,10 @@
   "permissions":[
   	"background",
     "http://search.twitter.com/*",
-    "http://localhost:*/*"
+    "http://localhost:*/*",
+    "serial",
+    "experimental",
+    "audioCapture"
   ],
   "icons":{"128": "flux.png"},
   "web_accessible_resources": [

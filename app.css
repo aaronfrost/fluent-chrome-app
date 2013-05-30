@@ -30,3 +30,25 @@
 .btn-group{
 	margin-bottom: 20px;
 }
+
+troller span{
+  color: black;
+  font-size: 18px;
+  display: inline-block;
+  -webkit-transition: all 10s ease-out;
+  transition: all 200ms ease-out;
+}
+
+troller > span{
+	margin: 10px;
+	line-height: 30px;
+}
+
+.quick-highlight{
+  color: red;
+}
+
+.full-highlight{
+  font-weight: bold;
+  font-size: 50px;
+}
