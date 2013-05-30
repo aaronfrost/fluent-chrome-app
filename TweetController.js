@@ -49,5 +49,6 @@ angular.module('app').controller('TweetController', function($scope, Tweets){
 			localStorage.setItem('max_id', result.max_id_str);
 		});
 	}, 1500);
+	
 
 });

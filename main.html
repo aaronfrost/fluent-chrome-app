@@ -3,10 +3,12 @@
 	<head >
 		<title>1.21 Gigawatts App</title>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="sockjs0.3.js"></script>
 		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
 		<script type="text/javascript" src="angular.js"></script>
 		<script type="text/javascript" src="angular-resource.js"></script>
 		<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="SocketController.js"></script>
 		<script type="text/javascript" src="TweetController.js"></script>
 		<script type="text/javascript" src="Tweets.js"></script>
 
@@ -16,9 +18,20 @@
 		
 	</head>
 	<body>
-		<h1>Count Your Tweets</h1>
+		<div ng-controller="SocketCtrl">
+			<h1>Node Trolls</h1>
+			
+			<div class="btn-group">
+				<button class="btn btn-info">Like Count: {{socketVotes.like}}</button>
+				<button class="btn btn-success">So Count: {{socketVotes.so}}</button>
+				<button class="btn btn-warning">Um Count: {{socketVotes.um}}</button>
+				<button class="btn btn-info">Uh Count: {{socketVotes.uh}}</button>
+			</div>
+			<button class="btn btn-error" ng-show="votingOn" ng-click="toggleVoting()">Live Trolling: ON</button>
+			<button class="btn btn-error"  ng-hide="votingOn" ng-click="toggleVoting()">Live Trolling: OFF</button>
+		</div>
 		<div class="tweets" ng-controller="TweetController">
-
+			<h1>Tweets Trolls</h1>
 			<div class="btn-group">
 				<button class="btn btn-info">Like Count: {{likeCount}}</button>
 				<button class="btn btn-success">So Count: {{soCount}}</button>

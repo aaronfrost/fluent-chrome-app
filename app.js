@@ -23,7 +23,7 @@ function init() {
       }
       request.send();
     }
-    loadScreamingSound('screamingsheep.mp3')
+    loadScreamingSound('screamingsheep.mp3');
   }
   catch(e) {
     alert('Web Audio API is not supported in this browser');

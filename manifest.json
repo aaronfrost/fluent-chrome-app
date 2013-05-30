@@ -13,10 +13,15 @@
   },
   "permissions":[
   	"background",
-    "http://search.twitter.com/*"
+    "http://search.twitter.com/*",
+    "http://localhost:*/*"
   ],
   "icons":{"128": "flux.png"},
   "web_accessible_resources": [
-    "screamingsheep.mp3" ]
+    "screamingsheep.mp3",
+    "http://localhost/socket.io/socket.io.js"
+  ],
+  "content_security_policy": "script-src 'self' https://localhost; object-src 'self'"
 }
+
   
