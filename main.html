@@ -4,13 +4,9 @@
 		<title>1.21 Gigawatts App</title>
 		<script type="text/javascript" src="js/jquery-2.0.0.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="sockjs0.3.js"></script>
 		<script type="text/javascript" src="angular.js"></script>
 		<script type="text/javascript" src="angular-resource.js"></script>
 		<script type="text/javascript" src="app.js"></script>
-		<script type="text/javascript" src="SocketController.js"></script>
-		<script type="text/javascript" src="TweetController.js"></script>
-		<script type="text/javascript" src="Tweets.js"></script>
 		<script type="text/javascript" src="troller.js"></script>
 
 		<link rel="stylesheet" href="css/bootstrap.css"/>
@@ -19,48 +15,7 @@
 		
 	</head>
 	<body>
-		
 		<h1>Angular Speech Recognition Trolls</h1>
 		<troller highlight="um|so|like|uh"></troller>
-
-		<br/>
-		<br/>
-		<div ng-controller="SocketCtrl">
-			<h1>Node Trolls</h1>
-			
-			<div class="btn-group">
-				<button class="btn btn-info">Like Count: {{socketVotes.like}}</button>
-				<button class="btn btn-success">So Count: {{socketVotes.so}}</button>
-				<button class="btn btn-warning">Um Count: {{socketVotes.um}}</button>
-				<button class="btn btn-info">Uh Count: {{socketVotes.uh}}</button>
-			</div>
-			<button class="btn btn-error" ng-show="votingOn" ng-click="toggleVoting()">Live Trolling: ON</button>
-			<button class="btn btn-error"  ng-hide="votingOn" ng-click="toggleVoting()">Live Trolling: OFF</button>
-		</div>
-		<div class="tweets" ng-controller="TweetController">
-			<h1>Tweets Trolls</h1>
-			<div class="btn-group">
-				<button class="btn btn-info">Like Count: {{likeCount}}</button>
-				<button class="btn btn-success">So Count: {{soCount}}</button>
-				<button class="btn btn-warning">Um Count: {{umCount}}</button>
-				<button class="btn btn-info">Uh Count: {{uhCount}}</button>
-			</div>
-			<div class="{{tweet.height}}" ng-repeat="tweet in tweets | orderBy:'id':true">
-
-				<div class="media">
-				  <a class="pull-left" href="#">
-				    <img class="media-object" src="{{tweet.profile_image_url}}">
-				  </a>
-				  <div class="media-body">
-				    <h4 class="media-heading">{{tweet.from_user_name}} <small>@{{tweet.from_user}}</small></h4>
-				    {{tweet.text}}
-				    <h6>{{tweet.created_at | date:'short'}}</h6>
-				  </div>
-				</div>
-
-				
-			</div>
-			
-		</div>	
 	</body>
 </html>

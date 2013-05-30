@@ -1,30 +1,21 @@
 {
   "name": "1.21 Gigawatts",
+  "description": "GigaWatts App used at Fluent Conf",
   "version": "0.1.1",
   "manifest_version": 2,
-  "description": "GigaWatts App used at Fluent Conf",
-  "app":{
-    "launch": {
-      "local_path" : "main.html",
-      "container":"panel",
-      "height": 600,
-      "width": 415
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
     }
   },
   "permissions":[
-  	"background",
     "http://search.twitter.com/*",
     "http://localhost:*/*",
     "serial",
     "experimental",
     "audioCapture"
   ],
-  "icons":{"128": "flux.png"},
-  "web_accessible_resources": [
-    "screamingsheep.mp3",
-    "http://localhost/socket.io/socket.io.js"
-  ],
-  "content_security_policy": "script-src 'self' https://localhost; object-src 'self'"
+  "icons":{"128": "flux.png"}
 }
 
   

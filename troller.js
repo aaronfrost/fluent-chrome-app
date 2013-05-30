@@ -1,3 +1,8 @@
+// Open the serial port
+var connectionId;
+var port = '/dev/tty.usbserial-FTE4XQGH';
+chrome.serial.open(port, {bitrate: 9600}, onOpen);
+
 angular.module('app')
   .directive('troller', function troller(){
     return {
@@ -59,6 +64,8 @@ angular.module('app')
             if (updated !== final_transcript){
                //moar goats
               playSound(screamingBuffer);
+              //moar shocking
+              writeSerial('s');
             }
            
 
@@ -79,3 +86,39 @@ angular.module('app')
       }
     };
   });
+
+function onOpen(connectionInfo) {
+   // The serial port has been opened. Save its id to use later.
+  connectionId = connectionInfo.connectionId;
+  console.log('onOpen()', 'connectionId', connectionId);
+}
+
+function onClose(result) {
+  console.log('Serial port closed');
+}
+
+function writeSerial(str) {
+  chrome.serial.write(connectionId, str2ab(str), onWrite);
+}
+
+function onWrite(){
+  // console.log('ZAPPING');
+}
+
+/* Convert an ArrayBuffer to a String, using UTF-8 as the encoding scheme.
+   This is consistent with how Arduino sends characters by default 
+*/
+function ab2str(buf) {
+  return String.fromCharCode.apply(null, new Uint8Array(buf));
+};
+
+
+// Convert string to ArrayBuffer
+function str2ab(str) {
+  var buf=new ArrayBuffer(str.length);
+  var bufView=new Uint8Array(buf);
+  for (var i=0; i<str.length; i++) {
+    bufView[i]=str.charCodeAt(i);
+  }
+  return buf;
+}
