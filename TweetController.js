@@ -43,7 +43,7 @@ angular.module('app').controller('TweetController', function($scope, Tweets){
 					tweet.height = 'shrink';
 					$scope.tweets.unshift(tweet);
 					tweetToShow.unshift(tweet);
-					playSound(screamingBuffer);
+					// playSound(screamingBuffer);
 
 				}
 			});
