@@ -21,8 +21,9 @@ angular.module('app').controller('TweetController', function($scope, Tweets){
 		};
 		var sinceId = localStorage.getItem('max_id') || 0;
 		console.log(sinceId);
-		if(sinceId) options['since_id'] = sinceId;
-
+		if(sinceId) {
+			options['since_id'] = sinceId;
+		}
 		var result = Tweets.get(options, function(){
 			
 			result.results.forEach(function(tweet){

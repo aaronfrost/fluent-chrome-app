@@ -13,6 +13,7 @@ angular.module('app').controller('SocketCtrl', function($scope){
 			case 'update_votes' :
 				$scope.socketVoteCount+=1;
 				$scope.socketVotes = m.data;
+				playSound(screamingBuffer);
 				break;
 			case 'master_init' :
 				$scope.socketVotes = m.data;
